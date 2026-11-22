@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Архивное дело № 42 | Заявка на допуск</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="page">
+    <header class="header">
+        <h1 class="header__title">Специальный архив расследований</h1>
+        <nav class="header__nav">
+            <a class="header__link" href="index.html">Титульный лист</a>
+            <a class="header__link" href="theories.html">Уровни секретности</a>
+            <a class="header__link" href="classified.html">Материалы дел</a>
+            <a class="header__link" href="timeline.html">Хронология событий</a>
+            <a class="header__link header__link_current" href="form.html">Заявка на допуск</a>
+        </nav>
+    </header>
+
+    <main class="sheet">
+        <div class="stamp">ФОРМУЛЯР // ЗАЯВКА НА ДОПУСК</div>
+        <h2 class="sheet__title">Заявка на допуск к материалам дел</h2>
+        <p class="sheet__text">Заполните формуляр. Результат заявки выводится в консоль браузера (F12).</p>
+
+        <form class="form" action="#" method="post">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Данные заявителя</legend>
+
+                <label class="form__label" for="callsign">Позывной</label>
+                <input class="form__field" type="text" id="callsign" name="callsign" required>
+
+                <label class="form__label" for="email">E-mail</label>
+                <input class="form__field" type="email" id="email" name="email" required>
+
+                <label class="form__label" for="level">Запрашиваемый уровень допуска</label>
+                <select class="form__field" id="level" name="level">
+                    <option value="1">Уровень 1</option>
+                    <option value="2">Уровень 2</option>
+                    <option value="3">Уровень 3</option>
+                </select>
+
+                <label class="form__checkbox">
+                    <input type="checkbox" name="agree" required>
+                    Согласен на обработку персональных данных
+                </label>
+            </fieldset>
+
+            <button class="form__submit" type="submit">Отправить заявку</button>
+        </form>
+    </main>
+</body>
+</html>

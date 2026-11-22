@@ -11,8 +11,8 @@ function isInteger(n) {
  */
 function even() {
     const result = [];
-    for (let i = 2; i <= 20; i += 2) {
-        result.push(i);
+    for (let i = 1; i <= 10; i++) {
+        result.push(i * 2);
     }
     return result;
 }
@@ -34,7 +34,7 @@ function sumTo(n) {
  * @param {*} n
  */
 function recSumTo(n) {
-    if (n === 1) {
+    if (n <= 1) {
         return 1;
     }
     return n + recSumTo(n - 1);
@@ -45,6 +45,9 @@ function recSumTo(n) {
  * @param {*} n
  */
 function factorial(n) {
+    if (n < 0) {
+        return undefined;
+    }
     if (n === 0 || n === 1) {
         return 1;
     }
@@ -64,7 +67,11 @@ function isBinary(n) {
  * @param {*} n
  */
 function fibonacci(n) {
-    if (n <= 2) return 1;
+    if (n < 0) {
+        return undefined;
+    }
+    if (n === 0) return 0;
+    if (n === 1) return 1;
     let a = 1, b = 1;
     for (let i = 3; i <= n; i++) {
         const c = a + b;
@@ -145,6 +152,9 @@ function deepEqual(firstObject, secondObject) {
         return true;
     }
     if (typeof firstObject !== 'object' || typeof secondObject !== 'object' || firstObject === null || secondObject === null) {
+        return false;
+    }
+    if (Array.isArray(firstObject) !== Array.isArray(secondObject)) {
         return false;
     }
     const keys1 = Object.keys(firstObject);
